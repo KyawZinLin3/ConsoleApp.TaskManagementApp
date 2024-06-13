@@ -16,16 +16,41 @@ namespace ConsoleApp.TaskManagementApp
         }
         static void Main(string[] args)
         {
+            Program program = new Program();
             MenuPrint();
-            Console.ReadLine();
+            int input = program.GetInput();
+            program.CheckInput(input);
         }
 
         static void MenuPrint()
         {
             Console.WriteLine("***** Task Management *****");
             Console.WriteLine("1. Add Task");
+            Console.Write("Your Input : ");
+        
         }
 
+        public int GetInput()
+        {
+            int input = Convert.ToInt16(Console.ReadLine());
+            return input;
+        }
+
+        public void CheckInput(int input)
+        {
+            if(input == 1) 
+            {
+                AddTask();
+            }
+        }
+
+        static void AddTask()
+        {
+            Console.WriteLine("Add your Task.");
+            Console.Write(">>> ");
+            string task = Console.ReadLine();
+            Console.WriteLine(task);
+        }
         
     }
 }

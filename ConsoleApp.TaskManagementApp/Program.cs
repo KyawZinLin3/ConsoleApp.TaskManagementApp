@@ -51,6 +51,22 @@ namespace ConsoleApp.TaskManagementApp
             string task = Console.ReadLine();
             Console.WriteLine(task);
         }
+
+        static void DeleteTask(string task)
+        {
+            Console.WriteLine("Delete Your Task");
+        }
+
+        static void UpdateTask()
+        {
+            Console.WriteLine("Update Your Task");
+
+        }
+        
+        static void MarkCompletetask(string task)
+        {
+            Console.WriteLine("Completed");
+        }
         
     }
 }

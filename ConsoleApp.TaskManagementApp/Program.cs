@@ -9,11 +9,8 @@ namespace ConsoleApp.TaskManagementApp
 {
     internal class Program
     {
-   
-        public Program()
-        {
-            
-        }
+        static List<Task> tasks = new List<Task>();
+        const string filePath="tasks.txt";
         static void Main(string[] args)
         {
             Program program = new Program();
@@ -46,10 +43,13 @@ namespace ConsoleApp.TaskManagementApp
 
         static void AddTask()
         {
-            Console.WriteLine("Add your Task.");
-            Console.Write(">>> ");
-            string task = Console.ReadLine();
-            Console.WriteLine(task);
+            Console.Write("Enter Task Title : ");
+            string title = Console.ReadLine();
+            Console.Write("Enter Task Description : ");
+            string description = Console.ReadLine();
+            tasks.Add(new Task(title, description));
+            Console.WriteLine("Task Added successfully");
+            Console.ReadLine();
         }
 
         static void DeleteTask(string task)
@@ -66,6 +66,11 @@ namespace ConsoleApp.TaskManagementApp
         static void MarkCompletetask(string task)
         {
             Console.WriteLine("Completed");
+        }
+
+        static void SaveTasksToFile()
+        {
+            Console.WriteLine();
         }
         
     }

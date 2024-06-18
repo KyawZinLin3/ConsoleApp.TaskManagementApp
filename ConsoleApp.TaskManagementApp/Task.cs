@@ -12,7 +12,7 @@ namespace ConsoleApp.TaskManagementApp
         public string Description { get; set; }
         public bool IsComplete { get; set; }
 
-        public Task(string title,string description)
+        public Task(string title, string description)
         {
             Title = title;
             Description = description;
@@ -22,6 +22,15 @@ namespace ConsoleApp.TaskManagementApp
         public string ToFileFormat()
         {
             return $"{Title}|{Description}|{IsComplete}";
+        }
+
+        public static Task FromFileFormat(string line)
+        {
+            var parts = line.Split('|');
+            return new Task(parts[0], parts[1])
+            {
+                IsComplete = bool.Parse(parts[2])
+            };
         }
     }
 }

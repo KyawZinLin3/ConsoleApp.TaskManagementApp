@@ -39,6 +39,20 @@ namespace ConsoleApp.TaskManagementApp
             {
                 AddTask();
             }
+            else if(input == 2)
+            {
+                ViewTask();
+            }
+        }
+
+        static void ViewTask()
+        {
+            Console.WriteLine("Tasks:");
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {tasks[i]}");
+            }
+            Console.ReadLine();
         }
 
         static void AddTask()
